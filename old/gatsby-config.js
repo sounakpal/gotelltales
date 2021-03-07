@@ -2,21 +2,17 @@ require(`dotenv`).config({
   path: `.env`,
 })
 
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Jodie - Gatsby Starter Portfolio`,
+    siteTitleAlt: `Emma - Gatsby Starter Portfolio`,
   },
   plugins: [
     {
-      resolve: `@lekoarts/gatsby-theme-jodie`,
+      resolve: `@lekoarts/gatsby-theme-emma`,
       // See the theme's README for all available options
-      options: {
-        navigation: [
-          { name: `Projects`, slug: `/projects` },
-          { name: `Instagram`, slug: `/instagram` },
-          { name: `About`, slug: `/about` },
-        ],
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -24,22 +20,16 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `2315642426`,
-      },
-    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `jodie - @lekoarts/gatsby-theme-jodie`,
-        short_name: `jodie`,
-        description: `Image-heavy photography portfolio with colorful accents & customizable pages. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
+        name: `Emma - @lekoarts/gatsby-theme-emma`,
+        short_name: `Emma`,
+        description: `Minimalistic bright portfolio with full-width grid and large images`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#b75e09`,
+        background_color: `#fff`,
+        theme_color: `#b83280`,
         display: `standalone`,
         icons: [
           {
@@ -56,7 +46,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-netlify`,
-  ],
+    shouldAnalyseBundle && {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        analyzerMode: `static`,
+        reportFilename: `_bundle.html`,
+        openAnalyzer: false,
+      },
+    },
+  ].filter(Boolean),
 }
