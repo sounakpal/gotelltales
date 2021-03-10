@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "jodie",
-  "description": "Image-heavy photography portfolio with colorful accents & customizable pages. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.",
+  "name": "GoTellTales",
+  "description": "Portfolio with colorful accents & pages. Includes Web integration into projects.",
   "version": "0.1.3",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Neha Dhara Sharma",
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-jodie",
   "scripts": {

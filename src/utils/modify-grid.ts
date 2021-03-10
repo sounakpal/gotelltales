@@ -17,7 +17,7 @@ function modifyGrid(data: IGridItem[], resolver = defaultResolver): IGridItem[] 
 
 /**
  * Examples:
- *
+ * 
  * You can import the onlyPages() function to filter out everything but pages:
  *
  * const modifyGrid = data => onlyPages(data)

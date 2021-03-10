@@ -6,8 +6,8 @@ export function onlyPages(data: IGridItem[]) {
 }
 
 // Only return nodes with the type "MdxProject"
-export function onlyProjects(data: IGridItem[]) {
-  return data.filter((p) => p.__typename === `MdxProject`)
+export function onlyProjectsAndInstagram(data: IGridItem[]) {
+  return data.filter((p) => p.__typename === `MdxProject` || p.slug === '/instagram')
 }
 
 // Only return nodes that match the slugs defined in the given array of slugs

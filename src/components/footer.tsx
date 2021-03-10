@@ -35,20 +35,6 @@ const Footer = ({ bg }: { bg: string }) => {
       <div>
         &copy; {new Date().getFullYear()} by {siteTitle}.
       </div>
-      <div>
-        <Link
-          aria-label="Link to the theme's GitHub repository"
-          href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-jodie"
-        >
-          Theme
-        </Link>
-        {` `}
-        by
-        {` `}
-        <Link aria-label="Link to the theme author's website" href="https://www.lekoarts.de/en">
-          LekoArts
-        </Link>
-      </div>
     </footer>
   )
 }

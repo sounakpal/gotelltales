@@ -10,7 +10,7 @@ type SidebarProps = { bg: string }
 
 const Sidebar = ({ bg }: SidebarProps) => {
   const { siteTitle } = useSiteMetadata()
-
+  console.log(bg);
   return (
     <header
       sx={{
@@ -26,12 +26,16 @@ const Sidebar = ({ bg }: SidebarProps) => {
         svg: {
           fill: readableColor(bg),
         },
+        img:{
+          width: `120px`,
+          height: `120px`,
+        },
         variant: `sidebar`,
       }}
       data-testid="sidebar"
     >
       <Link to="/" aria-label={`${siteTitle}, Back to Home`} sx={{ width: [`3rem`, `4rem`, `4.5rem`, `5rem`] }}>
-        <Logo />
+        <Logo  bg={bg} />
       </Link>
       <div sx={{ py: 4, display: [`none`, `none`, `none`, `block`] }} />
       <Navigation bg={bg} />

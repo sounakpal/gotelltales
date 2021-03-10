@@ -10,6 +10,7 @@ import { itemListWrapperStyles, itemStyles } from "../styles/item-list"
 import locales from "../locales"
 import { visuallyHidden } from "../styles/utils"
 import modifyGrid from "../utils/modify-grid"
+import { onlyProjectsAndInstagram} from "../utils/resolver-templates"
 
 type DataProps = {
   projects: {
@@ -32,7 +33,10 @@ type DataProps = {
 
 const Homepage: React.FC<PageProps<DataProps>> = ({ data: { pages, projects } }) => {
   const rawItems = [...pages.nodes, ...projects.nodes]
-  const items = modifyGrid(rawItems)
+  let items = modifyGrid(rawItems)
+  items.push(items.shift())
+  items.push(items.shift())
+  
   const itemsCount = items.length
   let divisor = 9
 

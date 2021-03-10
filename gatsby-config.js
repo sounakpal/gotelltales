@@ -4,7 +4,14 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Jodie - Gatsby Starter Portfolio`,
+    siteTitle: `GoTellTales`,
+    siteTitleAlt: `GoTellTales - Story telling beyond boundaries.`,
+    siteHeadline: `GoTellTales - Story telling beyond boundaries.`,
+    siteUrl: `https://jodie.lekoarts.de`,
+    siteDescription: `Full scale content production. Story telling beyond boundaries.`,
+    siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
+    author: `@lekoarts_de`,
   },
   plugins: [
     {
@@ -34,9 +41,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `jodie - @lekoarts/gatsby-theme-jodie`,
-        short_name: `jodie`,
-        description: `Image-heavy photography portfolio with colorful accents & customizable pages. Includes adaptive image grids powered by CSS grid and automatic image integration into projects.`,
+        name: `GoTellTales - @lekoarts/gatsby-theme-jodie`,
+        short_name: `GoTellTales`,
+        description: `Story telling beyond boundaries.`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#b75e09`,
