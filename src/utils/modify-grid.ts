@@ -1,5 +1,5 @@
 import { ChildImageSharp } from "../types"
-
+import { filterBySlug } from "./resolver-templates"
 export interface IGridItem {
   slug: string
   title: string
@@ -11,9 +11,7 @@ function defaultResolver(data: IGridItem[]): IGridItem[] {
   return data
 }
 
-function modifyGrid(data: IGridItem[], resolver = defaultResolver): IGridItem[] {
-  return resolver(data)
-}
+const modifyGrid = (data) => filterBySlug(data, ["/showcase","/music","/causes","/instagram"]);
 
 /**
  * Examples:
@@ -25,7 +23,7 @@ function modifyGrid(data: IGridItem[], resolver = defaultResolver): IGridItem[] 
  * You can also do more sophisticated filtering, like the filterBySlug() function that also takes in a second parameter (an array of slugs)
  * You'll need to pass the data in the second argument:
  *
- * const modifyGrid = (data) => filterBySlug(data, ["/about"])
+ * 
  */
 
 export default modifyGrid

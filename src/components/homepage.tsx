@@ -33,7 +33,7 @@ type DataProps = {
 
 const Homepage: React.FC<PageProps<DataProps>> = ({ data: { pages, projects } }) => {
   const rawItems = [...pages.nodes, ...projects.nodes]
-  let items = modifyGrid(rawItems)
+  let items = (rawItems) => onlyPages(data)
   items.push(items.shift())
   items.push(items.shift())
   
